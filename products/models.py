@@ -6,3 +6,6 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images')
     amount = models.IntegerField()
     price = models.DecimalField(decimal_places=2,max_digits=4)
+
+    def __str__(self):
+        return self.title
