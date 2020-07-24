@@ -17,8 +17,7 @@
 					<header id="header" class="alt">
                         <a href="{% url 'home' %}">
                             <span class="logo">Logo</span>
-                            <h1>Royal kid shoes</h1>
-                        </a>
+                            <h1>Royal kids' shoes</h1>                        </a>
                     </header>
 
 				<!-- Main -->
@@ -27,10 +26,14 @@
 							<section id="content" class="main">
                                 {% if objects %}
                                     {% for object in objects %}
-                                        <h2>{{ object.title }}</h2>
-                                        <img width="400" height="400" src="{{ object.image.url }}"/>
-                                        <h3>{{ object.price }}$</h3>
-                                        <h3>{{ object.amount }} pairs</h3>
+                                        <div id="cardMain">
+                                            <img  src="{{ object.image.url }}"/>
+                                            <div id="card">
+                                                <h2>{{ object.title }}</h2>
+                                                <h3>{{ object.price }}$</h3>
+                                                <h4>Size: {{ object.minSize }}-{{ object.maxSize }}</h4>
+                                            </div>
+                                        </div>
                                         <h4>{{ object.description }}</h4>
                                     {% endfor %}
                                 {% else %}
