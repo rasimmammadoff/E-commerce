@@ -10,7 +10,10 @@ class Product(models.Model):
     maxSize = models.IntegerField(default=26)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    category = models.ForeignKey('Category',null=True,blank=True,on_delete=models.CASCADE)
+    category = models.ForeignKey('Category',on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural='Products'
 
     def __str__(self):
         return self.title
@@ -19,6 +22,9 @@ class Category(models.Model):
     title = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural='Categories'
 
     def __str__(self):
         return self.title
