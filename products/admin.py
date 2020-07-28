@@ -4,6 +4,7 @@ from django.utils.html import format_html
 from .models import Product,Category
 
 
+# view of admin panel
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['id','title','amount','price','image_field','created_at','updated_at']
