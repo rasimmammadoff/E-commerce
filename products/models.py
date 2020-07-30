@@ -21,7 +21,10 @@ class Product(models.Model):
 
 # category model
 class Category(models.Model):
+    CHOICES = (("Men","M"),("Woman","W"))
+
     title = models.CharField(max_length=50)
+    gender = models.CharField(max_length=20,choices=CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

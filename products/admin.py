@@ -16,7 +16,7 @@ class ProductAdmin(admin.ModelAdmin):
     image_field.short_description = 'Image'
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['id','title','created_at','updated_at']
+    list_display = ['id','title','gender','created_at','updated_at']
     list_filter = ['title']
     readonly_fields = ['created_at','updated_at']
 
