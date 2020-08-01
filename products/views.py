@@ -26,3 +26,7 @@ def categoryDetail(request,id):
     context = {"objects": objects, "mcategories": men_categories, "wcategories": woman_categories}
     template = 'index.html'
     return render(request,template,context)
+
+def contact(request):
+    if request.method == 'GET':
+        return  render(request,'contact.html')
