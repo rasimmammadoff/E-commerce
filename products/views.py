@@ -4,15 +4,16 @@ from .models import Product,Category
 # home screen
 def home(request):
     objects = Product.objects.all()
-    categories = Category.objects.all()
-    context = {"objects":objects,"categories":categories}
+    men_categories = Category.objects.filter(gender='Men')
+    woman_categories = Category.objects.filter(gender='Woman')
+    context = {"objects":objects,"mcategories":men_categories,"wcategories":woman_categories}
     template = 'index.html'
     return render(request,template,context)
 
 # product click
 def productDetail(request,id):
     objects = Product.objects.filter(id=id)
-    template = 'generic.html'
+    template = 'shop-single.html'
     context = {'objects':objects}
     return render(request,template,context)
 

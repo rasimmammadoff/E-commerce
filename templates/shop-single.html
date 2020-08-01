@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="site-section">
+        <div class="container">
+            {% for object in objects %}
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="border">
+                        <img src="{{ object.image.url }}" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                <h2 class="text-black">{{ object.title }}</h2>
+                <p>{{ object.description }}</p>
+
+                <p><strong class="text-primary h4">${{ object.price }}</strong></p>
+
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
