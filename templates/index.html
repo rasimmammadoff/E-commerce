@@ -4,17 +4,18 @@
     <div class="products-wrap border-top-0">
         <div class="container-fluid">
             <div class="row no-gutters products">
-
                 {% for object in objects %}
-                    <a href="{% url  'detail' object.id %}">
-                        <div class="col-6 col-md-6 col-lg-4">
+
+                    <div class="col-6 col-md-6 col-lg-4">
+                        <a href="{% url  'detail' object.id %}">
                             <img src="{{ object.image.url }}" alt="Image" class="img-responsive">
                             <div class="item-info">
                                 <h3>{{ object.title }}</h3>
                                 <strong class="price">${{ object.price }}</strong>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+
                 {% endfor %}
 
             </div>
