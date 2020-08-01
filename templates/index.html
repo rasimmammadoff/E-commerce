@@ -1,26 +1,21 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
     <div class="products-wrap border-top-0">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row no-gutters products">
                 {% for object in objects %}
-
-                    <div class="col-6 col-md-6 col-lg-4">
-                        <a href="{% url  'detail' object.id %}">
-                            <img src="{{ object.image.url }}" alt="Image" class="img-responsive">
-                            <div class="item-info">
-                                <h3>{{ object.title }}</h3>
-                                <strong class="price">${{ object.price }}</strong>
-                            </div>
-                        </a>
+                    <div class="card" style="width: 20rem;border: none;margin: 10px">
+                        <img src="{{ object.image.url }}" class="card-img-bottom" style="height: 40vh" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{ object.title }}</p>
+                            <p class="card-text">${{ object.price }}</p>
+                        </div>
                     </div>
-
                 {% endfor %}
-
             </div>
         </div>
     </div>
-
 {% endblock %}
 
