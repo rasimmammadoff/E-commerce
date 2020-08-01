@@ -49,19 +49,19 @@
                     <nav class="site-navigation text-right text-md-center" role="navigation">
                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                             <li class="has-children">
-                                <a href="index.html">Men</a>
+                                <a href="">Men</a>
                                 <ul class="dropdown">
                                     {% for category in mcategories %}
-                                        <li><a href="#">{{ category.title }}</a></li>
+                                        <li><a href="{% url 'category' category.id %}">{{ category.title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
 
                             <li class="has-children">
-                                <a href="index.html">Woman</a>
+                                <a href="">Woman</a>
                                 <ul class="dropdown">
                                     {% for category in wcategories %}
-                                        <li><a href="#">{{ category.title }}</a></li>
+                                        <li><a href="{% url 'category' category.id %}">{{ category.title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>

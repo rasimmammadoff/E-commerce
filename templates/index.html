@@ -6,13 +6,15 @@
         <div class="container">
             <div class="row no-gutters products">
                 {% for object in objects %}
-                    <div class="card" style="width: 20rem;border: none;margin: 10px">
-                        <img src="{{ object.image.url }}" class="card-img-bottom" style="height: 40vh" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">{{ object.title }}</p>
-                            <p class="card-text">${{ object.price }}</p>
+                    <a href="{% url 'detail' object.id %}">
+                        <div class="card" style="width: 20rem;border: none;margin: 10px">
+                            <img src="{{ object.image.url }}" class="card-img-bottom" style="height: 40vh" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">{{ object.title }}</p>
+                                <p class="card-text">${{ object.price }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
