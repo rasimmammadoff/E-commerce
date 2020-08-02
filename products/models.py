@@ -21,7 +21,7 @@ class Product(models.Model):
 
 # category model
 class Category(models.Model):
-    CHOICES = (("Men","M"),("Woman","W"))
+    CHOICES = (("Men","Men"),("Woman","Woman"))
 
     title = models.CharField(max_length=50)
     gender = models.CharField(max_length=20,choices=CHOICES)
