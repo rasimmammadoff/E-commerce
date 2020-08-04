@@ -45,3 +45,7 @@ def addCategory(request):
         form.save()
     return redirect('home')
 
+
+def addProduct(request):
+    pass
+
