@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Product,Category
-from .forms import AddCategory
+from .forms import AddCategory,AddProduct
 
 # home screen
 def home(request):
@@ -34,7 +34,7 @@ def contact(request):
     if request.method == 'GET':
         return  render(request,'contact.html')
 
-
+# add category
 def addCategory(request):
     if request.method == 'GET':
         form = AddCategory()
@@ -45,7 +45,15 @@ def addCategory(request):
         form.save()
     return redirect('home')
 
-
+# add product
 def addProduct(request):
-    pass
+    if request.method == 'GET':
+        form = AddProduct()
+        return render(request,'add.html',{"form":form})
+
+    form = AddProduct(data=request.POST,files=request.FILES)
+    if form.is_valid():
+        form.save()
+    return redirect('home')
+
 

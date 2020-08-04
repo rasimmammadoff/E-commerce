@@ -8,7 +8,7 @@
                     <h2 class="h3 mb-3 text-black">Add category</h2>
                 </div>
                 <div class="col-md-7">
-                    <form action="#" method="post">
+                    <form method="post" action="" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="p-3 p-lg-5 border">
                             {% for field in form %}
